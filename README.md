@@ -4,8 +4,14 @@ A new Flutter project.
 
 # drift_database
 flutter pub run build_runner build
-
+# firebase 연결
+dart pub global activate flutterfire_cli
+https://velog.io/@tett_77/Firebase%EC%99%80-Flutter-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0
+https://console.firebase.google.com/project/flutter-calendar-schedule-af89/overview
 ## Getting Started
+flutterfire configure -p flutter-calendar-schedule-af89
+flutter-calendar-schedule-af89
+
 
 This project is a starting point for a Flutter application.
 

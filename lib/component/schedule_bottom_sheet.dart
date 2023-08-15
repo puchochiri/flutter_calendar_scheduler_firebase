@@ -3,8 +3,8 @@ import 'package:flutter_calendar_scheduler/const/colors.dart';
 import 'package:flutter_calendar_scheduler/component/custom_text_field.dart';
 // material.dart 패키지의 Column 클래스와 중복되니 드리프트에서는 숨기기
 import 'package:flutter_calendar_scheduler/model/schedule_model.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter_calendar_scheduler/provider/schedule_provider.dart';
+import 'package:uuid/uuid.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 
@@ -107,15 +107,23 @@ class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
     if(formKey.currentState!.validate()){ // 폼 검증하기
       formKey.currentState!.save();       // 폼 저장하기
 
-      context.read<ScheduleProvider>().createSchedule(
-        schedule: ScheduleModel(
-          id: 'new_model',
-          content: content!,
-          date: widget.selectedDate,
-          startTime: startTime!,
-          endTime: endTime!
-        ),
+      //스케쥴 모델 생성하기
+      final schedule = ScheduleModel(
+        id: Uuid().v4(),
+        content: content!,
+        date: widget.selectedDate,
+        startTime: startTime!,
+        endTime: endTime!,
       );
+
+      await FirebaseFirestore.instance
+        .collection(
+        'schedule',
+      )
+      .doc(schedule.id)
+      .set(schedule.toJson());
+
+
       Navigator.of(context).pop(); // 일정 생성 후 화면 뒤로 가기
 
 
