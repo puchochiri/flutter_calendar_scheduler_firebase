@@ -63,13 +63,16 @@ class _HomeScreenState extends State<HomeScreen> {
               // ListView에 적용했던 같은 쿼리
               stream: FirebaseFirestore.instance
                   .collection(
-                'schedule',
-              ).where(
-                'date',
+                "schedule",
+              )
+                  .where(
+                "date",
                 isEqualTo:
-                DateFormat('yyyyMMdd').format(selectedDate).toString()  ?? 0,
-              ).snapshots(),
+                DateFormat('yyyyMMdd').format(selectedDate),
+              )
+                  .snapshots(),
               builder: (context, snapshot) {
+
                 return TodayBanner(
                   selectedDate: selectedDate,
 
@@ -88,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ).where(
                   'date',
                   isEqualTo:
-                  DateFormat('yyyyMMdd').format(selectedDate).toString() ?? 0,
+                  DateFormat('yyyyMMdd').format(selectedDate),
                 ).snapshots(),
                 builder: (context, snapshot) {
                   // Stream을 가져오는 동안 에러가 났을 때 보여줄 화면

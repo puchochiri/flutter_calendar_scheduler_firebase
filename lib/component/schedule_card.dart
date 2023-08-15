@@ -2,8 +2,8 @@ import 'package:flutter_calendar_scheduler/const/colors.dart';
 import 'package:flutter/material.dart';
 
 class ScheduleCard extends StatelessWidget {
-  final int startTime;
-  final int endTime;
+  final int? startTime;
+  final int? endTime;
   final String content;
 
   const ScheduleCard({
@@ -48,8 +48,8 @@ class ScheduleCard extends StatelessWidget {
 }
 
 class _Time extends StatelessWidget {
-  final int startTime; // 시작 시간
-  final int endTime;   // 종료 시간
+  final int? startTime; // 시작 시간
+  final int? endTime;   // 종료 시간
 
   const _Time({
     required this.startTime,

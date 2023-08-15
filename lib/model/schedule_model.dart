@@ -13,13 +13,14 @@ class ScheduleModel {
     required this.endTime,
   });
 
-  ScheduleModel.fromJson({ //JSON으로 모델을 만들어 내는 생성자
+  ScheduleModel.fromJson({
     required Map<String, dynamic> json,
-  }) :  id      = json['id'],
+  }) :  id = json['id'],
         content = json['content'],
-        date    = DateTime.parse(json['date']),
+        date = DateTime.parse(json['date']),
         startTime = json['startTime'],
-        endTime = json['endTIme'];
+        endTime = json['endTime']; // Corrected key here
+
 
   Map<String, dynamic> toJson() { //모델을 다시 JSON으로 변환
     return {
