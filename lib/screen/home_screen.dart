@@ -6,6 +6,7 @@ import 'package:flutter_calendar_scheduler/component/schedule_card.dart';
 import 'package:flutter_calendar_scheduler/component/today_banner.dart';
 import 'package:flutter_calendar_scheduler/component/schedule_bottom_sheet.dart';
 import 'package:flutter_calendar_scheduler/const/colors.dart';
+import 'package:intl/intl.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   DateTime selectedDate = DateTime.utc(
     // ➋ 선택된 날짜를 관리할 변수
     DateTime.now().year,
@@ -62,13 +64,11 @@ class _HomeScreenState extends State<HomeScreen> {
               stream: FirebaseFirestore.instance
                   .collection(
                 'schedule',
-              )
-                  .where(
+              ).where(
                 'date',
                 isEqualTo:
-                '${selectedDate.year}${selectedDate.month}${selectedDate.day}',
-              )
-                  .snapshots(),
+                DateFormat('yyyyMMdd').format(selectedDate).toString()  ?? 0,
+              ).snapshots(),
               builder: (context, snapshot) {
                 return TodayBanner(
                   selectedDate: selectedDate,
@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ).where(
                   'date',
                   isEqualTo:
-                  '${selectedDate.year}${selectedDate.month}${selectedDate.day}',
+                  DateFormat('yyyyMMdd').format(selectedDate).toString() ?? 0,
                 ).snapshots(),
                 builder: (context, snapshot) {
                   // Stream을 가져오는 동안 에러가 났을 때 보여줄 화면
