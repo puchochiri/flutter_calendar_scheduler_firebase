@@ -18,8 +18,8 @@ class _BannerAdWidgetState extends State<BannerAdWidget> {
 
     //사용할 광고 ID를 설정합니다.
     final adUnitId = Platform.isIOS
-      ? 'ca-app-pub-3940256099942544/2934735716'
-      : 'ca-app-pub-3940256099942544/6300978111';
+      ? 'ca-app-pub-8863569239790772/3894148674'
+      : 'ca-app-pub-8863569239790772/8076102114';
 
     // 광고를 생성합니다.
     banner = BannerAd(
