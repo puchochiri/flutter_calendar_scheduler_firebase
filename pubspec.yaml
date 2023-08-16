@@ -47,6 +47,7 @@ dependencies:
   uuid: 3.0.6             # UUID를 생성하는 플러그인
   firebase_core: 2.15.0    # 파이어베이스 코어(기본) 플러그인
   cloud_firestore: 4.8.4  # 파이어스토어 플러그인
+  google_mobile_ads: 2.3.0
 
 
 

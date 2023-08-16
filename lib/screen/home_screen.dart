@@ -7,6 +7,7 @@ import 'package:flutter_calendar_scheduler/component/today_banner.dart';
 import 'package:flutter_calendar_scheduler/component/schedule_bottom_sheet.dart';
 import 'package:flutter_calendar_scheduler/const/colors.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_calendar_scheduler/component/banner_ad_widget.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -114,8 +115,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                       .toList();
 
-                  return ListView.builder(
+                  return ListView.separated(
                     itemCount: schedules.length,
+                    // 일정 중간 중간에 실행될 함수
+                    separatorBuilder: (context, index){
+                      return BannerAdWidget();
+                    },
+
                     itemBuilder: (context, index) {
                       final schedule = schedules[index];
 
