@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>392926733291-ep280356p2kib6agahoissk74jp7cmbr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.392926733291-ep280356p2kib6agahoissk74jp7cmbr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCWtRm2Ept7N9gYRdlSlSJydUX5PBnNvq4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>392926733291</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.flutterCalendarScheduler</string>
+	<key>PROJECT_ID</key>
+	<string>flutter-calendar-schedule-af89</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutter-calendar-schedule-af89.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:392926733291:ios:7ef340dc6f9773217f6fae</string>
+</dict>
+</plist>
